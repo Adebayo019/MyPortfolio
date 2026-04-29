@@ -1,0 +1,44 @@
+.nav-pills{
+    --bs-nav-pills-border-radius: var(--bs-border-radius);
+    --bs-nav-pills-link-active-color: #fcf8f8;
+     --bs-nav-pills-link-active-bg:#000000;
+}
+.nav-link{
+    color: black;
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030; /* above everything */
+  background: white;
+}
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ticker-item {
+  display: inline-block;
+  padding-right: 2rem; /* gap between repetitions */
+  animation: marquee 30s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+.col .d-flex {
+  transition: box-shadow 0.3s ease;
+}
+
+.col .d-flex:hover {
+  box-shadow: 6px 6px 0px black;
+}
+.col .d-flex {
+  transition: box-shadow 0.3s ease;
+  min-height: 200px;
+}
