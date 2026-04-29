@@ -1,0 +1,109 @@
+.nav-pills{
+    --bs-nav-pills-border-radius: var(--bs-border-radius);
+    --bs-nav-pills-link-active-color: #fcf8f8;
+     --bs-nav-pills-link-active-bg:#000000;
+}
+.nav-link{
+    color: black;
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030; /* above everything */
+  background: white;
+}
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ticker-item {
+  display: inline-block;
+  padding-right: 2rem; /* gap between repetitions */
+  animation: marquee 30s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+.col .d-flex {
+  transition: box-shadow 0.3s ease;
+}
+
+.col .d-flex:hover {
+  box-shadow: 6px 6px 0px black;
+}
+.col .d-flex {
+  transition: box-shadow 0.3s ease;
+  min-height: 200px;
+}
+.project-card {
+  display: block;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  background: white;
+  position: relative;
+}
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);       /* fully transparent at first */
+  transition: background 0.3s ease;   /* smooth fade in */
+  border-radius: 12px;
+}
+
+/* On hover — darken the overlay */
+.project-card:hover::after {
+  background: rgb(0, 0, 0);    /* black shade appears */
+}
+
+.project-card:hover { border-color: #aaa; }
+
+.card-img-top { 
+  width: 100%; 
+  height: 180px; 
+  object-fit: cover; 
+  position: relative;
+  z-index: 0;
+}
+
+.card-body { 
+  padding: 16px; 
+  position: relative;
+  z-index: 1;
+}
+
+.card-tag {
+  font-size: 10px; font-weight: 200;
+  color: #000000;
+    padding: 3px 10px; 
+  display: inline-block; margin-bottom: 8px;
+}
+.card-title { font-size: 16px; font-weight: 600; color: #111; margin-bottom: 8px; }
+.card-desc { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 16px; }
+
+.project-card:hover .card-title,
+.project-card:hover .card-desc,
+.project-card:hover .preview-btn {
+  color: white;
+}
+.preview-btn {
+  font-size: 13px; padding: 8px 16px;
+  border: 1px solid #ccc; border-radius: 8px;
+  background: transparent; cursor: pointer;
+}
+.preview-btn:hover { background: #f5f5f5; }
+.project-card:hover .preview-btn {
+  border-color: white;
+}
